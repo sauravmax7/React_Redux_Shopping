@@ -62,12 +62,15 @@ footer {
 .content {
   display: flex;
   flex-wrap: wrap;
+
 }
 .main {
   flex: 3 60rem;
+
 }
 .sidebar {
   flex: 1 20rem;
+
 }
 
 /* products */
@@ -79,17 +82,20 @@ footer {
   padding: 0;
   margin: 0;
   list-style-type: none;
+  
 }
 .products li {
   flex: 0 1 29rem;
   height: 47rem;
   padding: 1rem;
+  
 }
 .product {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  
 }
 .product img {
   max-width: 37rem;
