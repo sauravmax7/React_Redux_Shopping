@@ -3,6 +3,7 @@ import React from "react";
 import data from './data.json'
 import Products from "./components/Products";
 import Filter from "./components/Filter";
+import Cart from "./components/Cart";
 class App extends React.Component{
 
   constructor(props) {
@@ -11,10 +12,31 @@ class App extends React.Component{
     this.state = {
        products:data.products,
        size:"",
-       sort:""
+       sort:"",
+       cartItems:[]
     };
   }
   
+  addToCart=(product)=>{
+    const cartItems = this.state.cartItems.slice()
+    let alreadyInCart=false;
+    cartItems.forEach(item=>{
+      if (item._id===product._id){
+        item.count++;
+        alreadyInCart = true;
+      }
+    });
+    if(!alreadyInCart){
+      cartItems.push({...product,count:1});
+      
+    }
+    this.setState({cartItems});
+  }
+
+  removeItem = (item) => {
+    this.setState({cartItems:this.state.cartItems.filter(x=>x._id!==item._id)})
+  }
+
   sortProducts = (e) => {
     const sort=e.target.value;
     this.setState((state)=>({
@@ -65,9 +87,12 @@ class App extends React.Component{
             filterdProducts={this.filterdProducts}
             sortProducts={this.sortProducts}            
             />
-            <Products products={this.state.products}/></div>
-          <div className="sidebar">Cart Items</div>
+            <Products products={this.state.products} addToCart={this.addToCart}/></div>
+          <div className="sidebar"><Cart cartItems={this.state.cartItems} removeItem={(item)=>this.removeItem(item)}/>
+          </div>
         </div>
+        
+
       </main>
       <footer>
         All Rights Reserved.
