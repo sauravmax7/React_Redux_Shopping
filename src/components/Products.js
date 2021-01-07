@@ -8,6 +8,7 @@ import Zoom from 'react-reveal/Zoom';export default class Products extends Compo
     super(props);
     this.state = {
       product: null,
+      
     };
   }
   openModal = (product) => {
