@@ -13,6 +13,7 @@ import Zoom from 'react-reveal/Zoom';export default class Products extends Compo
   openModal = (product) => {
     this.setState({ product });
   };
+  
   closeModal = () => {
     this.setState({ product: null });
   };
