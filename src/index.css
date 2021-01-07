@@ -8,6 +8,8 @@ body,
 #root {
   height: 100vh;
   margin: 0;
+
+  ;
 }
 body,
 input,
@@ -24,7 +26,7 @@ textarea {
     "header"
     "main"
     "footer";
-  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-rows: 5rem 1fr;
   grid-template-columns: 1fr;
   height: 100%;
 }
@@ -36,7 +38,7 @@ a:hover {
 }
 header {
   grid-area: header;
-  background-color: #203040;
+  background-color: midnightblue;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -49,10 +51,11 @@ header a {
 }
 main {
   grid-area: main;
+
 }
 footer {
   grid-area: footer;
-  background-color: #203040;
+  background-color: midnightblue;
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -86,7 +89,7 @@ footer {
 }
 .products li {
   flex: 0 1 29rem;
-  height: 47rem;
+  height: 40rem;
   padding: 1rem;
   
 }
@@ -95,16 +98,25 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  border: 2px solid #e9f5f8;
+  border-radius: 10px;
+  background-color: #e9f5f8 ;
   
+}
+
+.product p{
+color: midnightblue;
 }
 .product img {
   max-width: 37rem;
   max-height: 37rem;
+  padding: 20px 45px;
 }
 .product-price {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: midnightblue;
 }
 .product-price div,
 .product-price button {
@@ -115,16 +127,17 @@ footer {
   font-size: 2rem;
 }
 .button {
-  padding: 1rem;
+  padding: 1rem 3rem;
   border: 0.1rem #c0c0c0 solid;
-  background-color: #f0f0f0;
+  background-color: #daedf4;
   cursor: pointer;
+  border-radius: 4px;
 }
 .button:hover {
-  border: 0.1rem #808080 solid;
+  background-color: #808080;
 }
 .button.primary {
-  background-color: #f0c040;
+  background-color: lightblue;
 }
 /* Filter */
 .filter {
@@ -250,7 +263,7 @@ input {
   padding: 10px;
 }
 tbody > tr:nth-child(odd) {
-  background-color: #f0f0f0;
+  background-color: #daedf4;
 }
 td {
   padding: 5px;
